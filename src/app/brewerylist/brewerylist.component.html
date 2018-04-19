@@ -1,5 +1,12 @@
 <div class="container">
+  <h1 class="text-center">{{ title }}</h1>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker *ngFor="let brewery of breweries" latitude="{{ brewery.latitude }}" longitude="{{ brewery.longitude }}"></agm-marker>
+  </agm-map>
+</div>
+<div class="container">
   <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action" *ngFor="let brewery of breweries">{{brewery.id}}. {{brewery.name}}</a>    
+      <a class="list-group-item list-group-item-action" *ngFor="let brewery of breweries" 
+        routerLink="/brewdetail/{{ brewery.brewery_id }}">{{ brewery.brewery_name }}   |   {{ brewery.brewery_addr }}</a>    
   </div>
 </div>

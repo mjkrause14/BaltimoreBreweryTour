@@ -1,5 +1,24 @@
-<div *ngIf="brewery">
+<div class="container">
+  <div *ngIf="brewery">
 
-  <h2>{{brewery.name | uppercase}} Craft Beers</h2>
-  <div></div>
+    <h2>{{ brewery.brewery_name | uppercase }} Craft Beers</h2>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Beer Name</th>
+            <th scope="col">Beer Type</th>
+            <th scope="col">ABV</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let beer of beers">
+            <td>{{ beer.beer_name }}</td>
+            <td>{{ beer.beer_type }}</td>
+            <td>{{ beer.abv }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

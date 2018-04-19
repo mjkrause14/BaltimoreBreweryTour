@@ -1,6 +1,6 @@
-export class beer {
+export class Beer {
     brewery: string;
     name: string;
     type: string;
-    abv: string;
+    abv: number;
 }

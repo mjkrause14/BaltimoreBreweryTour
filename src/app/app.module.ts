@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapsAPIWrapper } from '@agm/core/services/google-maps-api-wrapper';
+import { RouterModule } from '@angular/router';
 
+import { routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { BrewerylistComponent } from './brewerylist/brewerylist.component';
 import { BreweryDetailComponent } from './brewery-detail/brewery-detail.component';
-
+import { AppRoutingModule } from './app-routing.module';
+import { BeerService } from './beer.service';
+import { BreweryService } from './brewery.service';
 
 @NgModule({
   declarations: [
@@ -27,9 +31,11 @@ import { BreweryDetailComponent } from './brewery-detail/brewery-detail.componen
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    AppRoutingModule
   ],
-  providers: [GoogleMapsAPIWrapper],
+  providers: [GoogleMapsAPIWrapper, BeerService, BreweryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
