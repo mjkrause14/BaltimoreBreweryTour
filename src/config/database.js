@@ -2,7 +2,7 @@ module.exports = {
     'connection': {
         'host': 'localhost',
         'user': 'node',
-        'password': '**'
+        'password': 'password'
     },
     'database': 'brewerytour',
     'brewery_table': 'breweries',
